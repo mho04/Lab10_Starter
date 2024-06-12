@@ -15,7 +15,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-  gtag('config', 'G-Y2QECXRNJJ');
+    gtag('config', 'G-Y2QECXRNJJ');
   </script>
 
   <!-- Google Tag Manager -->
@@ -23,13 +23,12 @@
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-54SC3SNQ');</script>
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
   <!-- End Google Tag Manager -->
 
-  
   <!-- JS Confetti -->
   <script src="assets/scripts/js-confetti.browser.js"></script>
-  
+
   <!-- Main Stylesheet & Scripts -->
   <link rel="stylesheet" href="assets/styles/global.css" />
   <script src="assets/scripts/partyHorn.js" type="module"></script>
@@ -40,7 +39,7 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54SC3SNQ"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  
+
   <header>
     <nav>
       <a href="speechSynth.html" title="Go to speech synthesizer">Speech Synthesizer</a>
@@ -78,6 +77,22 @@
     if (shouldApplyClass) {
          body.classList.add('blue');
     }
+
+    function handleClassChange() {
+      if (body.classList.contains('blue')) {
+        console.log('Background is blue');
+        document.body.style.backgroundColor = 'lightblue';
+      } else {
+        console.log('Background is white');
+        document.body.style.backgroundColor = 'white';
+      }
+    }
+
+    const observer = new MutationObserver(handleClassChange);
+
+    observer.observe(body, { attributes: true, attributeFilter: ['class'] });
+
+    handleClassChange();
   </script>
 </body>
 
